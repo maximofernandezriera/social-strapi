@@ -2,6 +2,8 @@
 
 Una guía práctica para implementar autenticación OAuth con GitHub en aplicaciones modernas.
 
+> 📊 **Presentación**: [Ver slides en GitHub Pages](https://maximofernandezriera.github.io/social-strapi/)
+
 ## Descripción del Proyecto
 
 Este proyecto demuestra cómo integrar autenticación social usando GitHub como proveedor OAuth en una arquitectura moderna con:

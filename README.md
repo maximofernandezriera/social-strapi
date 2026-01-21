@@ -38,7 +38,7 @@ Este proyecto demuestra cómo integrar autenticación social usando GitHub como 
 
 ---
 
-# Clase Magistral: Implementación de OAuth con GitHub
+# Implementación de OAuth con GitHub
 
 ## Introducción
 
@@ -206,15 +206,15 @@ Solo necesitas configurar el proveedor en Strapi y crear la OAuth App correspond
 
 ---
 
-# Bitácora de Desarrollo
+# El Desarrollo
 
-## Día 1 - Configuración Inicial
+## Configuración Inicial
 
-### 09:27 - Inicio del proyecto
+### Inicio del proyecto
 
 Comenzamos analizando los requisitos. El objetivo es claro: implementar autenticación con GitHub usando Next.js y Strapi. Decidí seguir una arquitectura limpia separando frontend y backend en carpetas distintas.
 
-### 09:35 - Creación del frontend
+### Creación del frontend
 
 ```bash
 npx create-next-app@latest frontend --typescript --tailwind --eslint --src-dir --app
@@ -226,11 +226,11 @@ Elegí las opciones modernas:
 - App Router por ser el futuro de Next.js
 - `src/` directory para mejor organización
 
-### 09:42 - Implementación del formulario de login
+### Implementación del formulario de login
 
 Creé el componente de login con el botón de GitHub. Usé los estilos de TailwindUI para una apariencia profesional. El botón es simplemente un `Link` que redirige a la API de Strapi.
 
-### 09:48 - Route Handler para el callback
+### Route Handler para el callback
 
 Esta fue la parte más delicada. El Route Handler debe:
 1. Extraer el `access_token` de la URL
@@ -240,15 +240,15 @@ Esta fue la parte más delicada. El Route Handler debe:
 
 Tuve que usar `await params` porque en Next.js 16 los params son una Promise.
 
-### 09:52 - Dashboard y Logout
+### Dashboard y Logout
 
 Implementé el dashboard con un botón de logout usando Server Actions. Es más limpio que crear un API route separado para algo tan simple.
 
-### 09:55 - Middleware de protección
+### Middleware de protección
 
 El middleware verifica cada request al dashboard. Si el usuario no está autenticado, lo redirige al login. Uso el endpoint `/api/users/me` de Strapi como fuente de verdad.
 
-### 09:56 - Backend con Strapi
+### Backend con Strapi
 
 ```bash
 npx create-strapi-app@latest backend --quickstart
@@ -256,7 +256,7 @@ npx create-strapi-app@latest backend --quickstart
 
 Strapi 5 trae mejoras significativas en rendimiento y DX. El flag `--quickstart` usa SQLite, perfecto para desarrollo.
 
-### 10:00 - Verificación final
+### Verificación final
 
 Ambas aplicaciones corriendo:
 - Frontend: http://localhost:3000
